@@ -1,0 +1,33 @@
+name: Build IPTV playlist
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - build_playlist.py
+      - .github/workflows/build-playlist.yml
+  schedule:
+    - cron: "17 10 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build playlist
+        run: python build_playlist.py
+      - name: Commit refreshed playlist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add English_TV_Essentials_US.m3u
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh curated IPTV playlist"
+            git push
+          fi
