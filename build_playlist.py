@@ -45,23 +45,31 @@ GROUPS = {
     ],
 }
 
+
+def parse_attr(line: str, key: str) -> str:
+    match = re.search(rf'{re.escape(key)}="([^"]*)"', line)
+    return match.group(1) if match else ""
+
+
 with urllib.request.urlopen(SOURCE, timeout=60) as response:
- lines = response.read().decode("utf-8", errors="replace").splitlines()
+    lines = response.read().decode("utf-8", errors="replace").splitlines()
 
 entries = {}
 for i, line in enumerate(lines[:-1]):
     if not line.startswith("#EXTINF:"):
         continue
- stream = lines[i + 1].strip()
- match = re.search(r'tvg-id="([^"]*)"', line)
-    if not match:
+
+    stream = lines[i + 1].strip()
+    tvg_id = parse_attr(line, "tvg-id")
+
+    if not tvg_id:
         continue
- tvg_id = match.group(1)
     if not stream.startswith("https://"):
         continue
     if "[Geo-blocked]" in line or "[Not 24/7]" in line:
         continue
- entries[tvg_id] = (line, stream)
+
+    entries[tvg_id] = (line, stream)
 
 output = [
     "#EXTM3U",
@@ -70,23 +78,33 @@ output = [
 ]
 
 missing = []
+written = 0
+
 for group, ids in GROUPS.items():
     for tvg_id in ids:
- entry = entries.get(tvg_id)
+        entry = entries.get(tvg_id)
         if not entry:
- missing.append(tvg_id)
+            missing.append(tvg_id)
             continue
-        extinf, stream = entry
- ame = extinf.split(",", 1)[1]
- logo_match = re.search(r'tvg-logo="([^"]*)"', extinf)
- logo = logo_match.group(1) if logo_match else ""
- output.append(
-            f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group}",{ ame}'
-        )
- output.append(stream)
 
-if missing:
-    raise SystemExit("Missing required channels: " + ", ".join(missing))
+        extinf, stream = entry
+        name = extinf.split(",", 1)[1] if "," in extinf else tvg_id
+        logo = parse_attr(extinf, "tvg-logo")
+
+        output.append(
+            f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" '
+            f'group-title="{group}",{name}'
+        )
+        output.append(stream)
+        written += 1
+
+if written < 25:
+    raise SystemExit(
+        f"Only {written} curated channels matched; refusing to overwrite playlist."
+    )
 
 OUTPUT.write_text("\n".join(output) + "\n", encoding="utf-8")
-print(f"Wrote {sum(len(v) for v in GROUPS.values())} channels to {OUTPUT}")
+print(f"Wrote {written} channels to {OUTPUT}")
+
+if missing:
+    print("Skipped missing channels: " + ", ".join(missing))
