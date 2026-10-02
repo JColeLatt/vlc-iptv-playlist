@@ -21,7 +21,7 @@ GROUPS = {
     ],
     "04 Sports": [
         "NBCSportsNOW.us@SD", "FuboSportsNetwork.us@SD", "PGATour.us@SD",
-        "SportsGrid.us@SD", "Pac12Insider.us@SD", "PBRRidePass.us@PD"
+        "SportsGrid.us@SD", "Pac12Insider.us@SD", "PBRRidePass.us@SD"
     ],
     "05 Movies": [
         "00sReplay.us@SD", "70sCinema.us@SD", "80sRewind.us@SD",
