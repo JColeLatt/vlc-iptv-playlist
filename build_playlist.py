@@ -60,12 +60,12 @@ OVERRIDES = {
 
 
 def parse_attr(line: str, key: str) -> str:
-    match = re.search(rf'{re.escape(key)}="([^"]*)"', line)
+ match = re.search(rf'{re.escape(key)}="([^"]*)"', line)
     return match.group(1) if match else ""
 
 
 with urllib.request.urlopen(SOURCE, timeout=60) as response:
-    lines = response.read().decode("utf-8", errors="replace").splitlines()
+ lines = response.read().decode("utf-8", errors="replace").splitlines()
 
 entries = {}
 for i, line in enumerate(lines[:-1]):
