@@ -1,0 +1,9 @@
+[Unit]
+Description=Refresh Jellyfin IPTV XMLTV guide
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/ripper/vlc-iptv-playlist-validation
+ExecStart=/home/ripper/vlc-iptv-playlist-validation/epg/refresh_epg.sh

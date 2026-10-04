@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh Jellyfin IPTV XMLTV guide twice daily
+
+[Timer]
+OnCalendar=*-*-* 04,16:15:00 America/New_York
+Persistent=true
+RandomizedDelaySec=15m
+
+[Install]
+WantedBy=timers.target

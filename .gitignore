@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+epg/guide.xml.new
+epg/guide.xml

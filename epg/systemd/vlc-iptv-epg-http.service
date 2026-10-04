@@ -1,0 +1,13 @@
+[Unit]
+Description=Loopback-only HTTP server for Jellyfin IPTV guide
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ripper/vlc-iptv-playlist-validation/epg
+ExecStart=/usr/bin/python3 -m http.server 9988 --bind 127.0.0.1 --directory /home/ripper/vlc-iptv-playlist-validation/epg
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=default.target
