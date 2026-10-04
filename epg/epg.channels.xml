@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Exact iptv-org channel/feed IDs for the published playlist. Unlisted channels have no verified source. -->
 <channels>
-<channel site="tvpassport.com" site_id="cbs-wbtv-charlotte-nc-hd/3649" lang="en" xmltv_id="WBTV641.us@HD">WBTV 64.1</channel>
-<channel site="pluto.tv" site_id="6508be683a0d700008c534e4" lang="en" xmltv_id="ABCNewsLive.us@SD">ABC News Live</channel>
-<channel site="xumo.tv" site_id="0#99991158" lang="en" xmltv_id="CBSNews247.us@SD">CBS News 24/7</channel>
-<channel site="xumo.tv" site_id="0#99991247" lang="en" xmltv_id="NBCNewsNOW.us@SD">NBC News NOW</channel>
-<channel site="tvpassport.com" site_id="scripps-news/5999" lang="en" xmltv_id="ScrippsNews.us@SD">Scripps News</channel>
-<channel site="xumo.tv" site_id="0#99991635" lang="en" xmltv_id="LiveNOWfromFOX.us@SD">LiveNOW from FOX</channel>
-<channel site="plex.tv" site_id="60df3e18541143002f3b8607" lang="en" xmltv_id="USATODAY.us@SD">USA TODAY</channel>
-<channel site="xumo.tv" site_id="0#99991220" lang="en" xmltv_id="CheddarNews.us@SD">Cheddar News</channel>
-<channel site="tvpassport.com" site_id="accuweather-hd/7335" lang="en" xmltv_id="AccuWeatherNOW.us@SD">AccuWeather NOW</channel>
-<channel site="tvpassport.com" site_id="fox-weather/37620" lang="en" xmltv_id="FoxWeather.us@SD">FOX Weather</channel>
-<channel site="tvpassport.com" site_id="weathernation/13501" lang="en" xmltv_id="WeatherNation.us@SD">WeatherNation</channel>
-<channel site="plex.tv" site_id="5f170f01b898490041b49dd1" lang="en" xmltv_id="YahooFinance.us@SD">Yahoo Finance</channel>
-<channel site="xumo.tv" site_id="50#99951253" lang="en" xmltv_id="NBCSportsNOW.us@SD">NBC Sports NOW</channel>
-<channel site="plex.tv" site_id="5fc705f68aba71002d8b7b37" lang="en" xmltv_id="FuboSportsNetwork.us@SD">Fubo Sports Network</channel>
-<channel site="xumo.tv" site_id="50#99991281" lang="en" xmltv_id="PGATour.us@SD">PGA TOUR</channel>
-<channel site="plex.tv" site_id="6490e78518a55242eea95999" lang="en" xmltv_id="SportsGrid.us@SD">SportsGrid</channel>
-<channel site="plex.tv" site_id="646c0dfbfb58444e4e1e262d" lang="en" xmltv_id="Pac12Insider.us@SD">Pac-12 Insider</channel>
-<channel site="pluto.tv" site_id="60d39387706fe50007fda8e8" lang="en" xmltv_id="PBRRidePass.us@SD">PBR RidePass</channel>
-<channel site="beinsports.com" site_id="1ACADCF1-DFAC-480B-872C-53D51FE1B45D" lang="en" xmltv_id="beINSPORTSXTRA.us@SD">beIN SPORTS XTRA</channel>
-<channel site="pluto.tv" site_id="5f4d878d3d19b30007d2e782" lang="en" xmltv_id="70sCinema.us@SD">70s Cinema</channel>
-<channel site="pluto.tv" site_id="5ca525b650be2571e3943c63" lang="en" xmltv_id="80sRewind.us@SD">80s Rewind</channel>
-<channel site="pluto.tv" site_id="628e685ba3811100070551a8" lang="en" xmltv_id="HallmarkMoviesMore.us@SD">Hallmark Movies & More</channel>
-<channel site="xumo.tv" site_id="0#99951251" lang="en" xmltv_id="MovieSphere.us@US">MovieSphere</channel>
-<channel site="pluto.tv" site_id="62ea3c2e4823db00072788ed" lang="en" xmltv_id="PlutoTVActionMovies.us@CA">Pluto TV Action Movies</channel>
-<channel site="tvpassport.com" site_id="charge/15228" lang="en" xmltv_id="Charge.us@SD">Charge!</channel>
-<channel site="i.mjh.nz" site_id="Roku/all#e1df79771ae4850c0e48ecc6284065d0" lang="en" xmltv_id="48Hours.us@US">48 Hours</channel>
-<channel site="plex.tv" site_id="63e63f20abacad42ed3d1acf" lang="en" xmltv_id="Baywatch.us@US">Baywatch</channel>
-<channel site="pluto.tv" site_id="5f7794162a4559000781fc12" lang="en" xmltv_id="HappyDays.us@SD">Happy Days</channel>
-<channel site="pluto.tv" site_id="60f754f98185580007eb0754" lang="en" xmltv_id="Matlock.us@SD">Matlock</channel>
-<channel site="plex.tv" site_id="65cd278697fb4731f54ecae5" lang="en" xmltv_id="Mythbusters.us@UK">Mythbusters</channel>
-<channel site="xumo.tv" site_id="150#99951244" lang="en" xmltv_id="NBCComedyVault.us@SD">NBC Comedy Vault</channel>
-<channel site="i.mjh.nz" site_id="SamsungTVPlus/us#USBA300032J7" lang="en" xmltv_id="FoxSoul.us@SD">FOX SOUL</channel>
-<channel site="plex.tv" site_id="5ef4e1b40d9ad000423c442a" lang="en" xmltv_id="RetroCrush.us@SD">RetroCrush</channel>
-<channel site="tvpassport.com" site_id="pbs-kids-247/31867" lang="en" xmltv_id="PBSKids.us@SD">PBS KIDS</channel>
-<channel site="pluto.tv" site_id="5ca6748a37b88b269472dad9" lang="en" xmltv_id="NickJrPlutoTV.us@US">Nick Jr. Pluto TV</channel>
-<channel site="pluto.tv" site_id="5ca673e0d0bd6c2689c94ce3" lang="en" xmltv_id="NickelodeonPlutoTV.us@SD">Nickelodeon Pluto TV</channel>
-<channel site="xumo.tv" site_id="0#99991638" lang="en" xmltv_id="DocumentaryPlus.us@US">Documentary+</channel>
-<channel site="tvpassport.com" site_id="pbs-world/10214" lang="en" xmltv_id="WorldChannel.us@SD">World Channel</channel>
-<channel site="plex.tv" site_id="5f74cf83ffbe690040689f50" lang="en" xmltv_id="HistoryHit.uk@SD">History Hit</channel>
-<channel site="plex.tv" site_id="63506e7747b2355a27e76e7f" lang="en" xmltv_id="PBSNature.us@SD">PBS Nature</channel>
-<channel site="i.mjh.nz" site_id="Roku/all#7e9fe2b4c7ba5869af6d60adbf4b7c86" lang="en" xmltv_id="ThisOldHouse.us@SD">This Old House</channel>
-<channel site="pluto.tv" site_id="5fd7b8bf927e090007685853" lang="en" xmltv_id="Vevo80s.us@SD">Vevo '80s</channel>
-<channel site="pluto.tv" site_id="5fd7bb1f86d94a000796e2c2" lang="en" xmltv_id="Vevo90s.us@SD">Vevo '90s</channel>
+  <channel site="tvpassport.com" site_id="cbs-wbtv-charlotte-nc-hd/3649" lang="en" xmltv_id="WBTV641.us@HD">WBTV 64.1</channel>
+  <channel site="pluto.tv" site_id="6508be683a0d700008c534e4" lang="en" xmltv_id="ABCNewsLive.us@SD">ABC News Live</channel>
+  <channel site="xumo.tv" site_id="0#99991158" lang="en" xmltv_id="CBSNews247.us@SD">CBS News 24/7</channel>
+  <channel site="xumo.tv" site_id="0#99991247" lang="en" xmltv_id="NBCNewsNOW.us@SD">NBC News NOW</channel>
+  <channel site="tvpassport.com" site_id="scripps-news/5999" lang="en" xmltv_id="ScrippsNews.us@SD">Scripps News</channel>
+  <channel site="xumo.tv" site_id="0#99991635" lang="en" xmltv_id="LiveNOWfromFOX.us@SD">LiveNOW from FOX</channel>
+  <channel site="plex.tv" site_id="60df3e18541143002f3b8607" lang="en" xmltv_id="USATODAY.us@SD">USA TODAY</channel>
+  <channel site="xumo.tv" site_id="0#99991220" lang="en" xmltv_id="CheddarNews.us@SD">Cheddar News</channel>
+  <channel site="tvpassport.com" site_id="accuweather-hd/7335" lang="en" xmltv_id="AccuWeatherNOW.us@SD">AccuWeather NOW</channel>
+  <channel site="tvpassport.com" site_id="fox-weather/37620" lang="en" xmltv_id="FoxWeather.us@SD">FOX Weather</channel>
+  <channel site="tvpassport.com" site_id="weathernation/13501" lang="en" xmltv_id="WeatherNation.us@SD">WeatherNation</channel>
+  <channel site="plex.tv" site_id="5f170f01b898490041b49dd1" lang="en" xmltv_id="YahooFinance.us@SD">Yahoo Finance</channel>
+  <channel site="xumo.tv" site_id="50#99951253" lang="en" xmltv_id="NBCSportsNOW.us@SD">NBC Sports NOW</channel>
+  <channel site="plex.tv" site_id="5fc705f68aba71002d8b7b37" lang="en" xmltv_id="FuboSportsNetwork.us@SD">Fubo Sports Network</channel>
+  <channel site="xumo.tv" site_id="50#99991281" lang="en" xmltv_id="PGATour.us@SD">PGA TOUR</channel>
+  <channel site="plex.tv" site_id="6490e78518a55242eea95999" lang="en" xmltv_id="SportsGrid.us@SD">SportsGrid</channel>
+  <channel site="plex.tv" site_id="646c0dfbfb58444e4e1e262d" lang="en" xmltv_id="Pac12Insider.us@SD">Pac-12 Insider</channel>
+  <channel site="pluto.tv" site_id="60d39387706fe50007fda8e8" lang="en" xmltv_id="PBRRidePass.us@SD">PBR RidePass</channel>
+  <channel site="beinsports.com" site_id="1ACADCF1-DFAC-480B-872C-53D51FE1B45D" lang="en" xmltv_id="beINSPORTSXTRA.us@SD">beIN SPORTS XTRA</channel>
+  <channel site="pluto.tv" site_id="5f4d878d3d19b30007d2e782" lang="en" xmltv_id="70sCinema.us@SD">70s Cinema</channel>
+  <channel site="pluto.tv" site_id="5ca525b650be2571e3943c63" lang="en" xmltv_id="80sRewind.us@SD">80s Rewind</channel>
+  <channel site="pluto.tv" site_id="628e685ba3811100070551a8" lang="en" xmltv_id="HallmarkMoviesMore.us@SD">Hallmark Movies &amp; More</channel>
+  <channel site="xumo.tv" site_id="0#99951251" lang="en" xmltv_id="MovieSphere.us@US">MovieSphere</channel>
+  <channel site="pluto.tv" site_id="62ea3c2e4823db00072788ed" lang="en" xmltv_id="PlutoTVActionMovies.us@CA">Pluto TV Action Movies</channel>
+  <channel site="tvpassport.com" site_id="charge/15228" lang="en" xmltv_id="Charge.us@SD">Charge!</channel>
+  <channel site="i.mjh.nz" site_id="Roku/all#e1df79771ae4850c0e48ecc6284065d0" lang="en" xmltv_id="48Hours.us@US">48 Hours</channel>
+  <channel site="plex.tv" site_id="63e63f20abacad42ed3d1acf" lang="en" xmltv_id="Baywatch.us@US">Baywatch</channel>
+  <channel site="pluto.tv" site_id="5f7794162a4559000781fc12" lang="en" xmltv_id="HappyDays.us@SD">Happy Days</channel>
+  <channel site="pluto.tv" site_id="60f754f98185580007eb0754" lang="en" xmltv_id="Matlock.us@SD">Matlock</channel>
+  <channel site="plex.tv" site_id="65cd278697fb4731f54ecae5" lang="en" xmltv_id="Mythbusters.us@UK">Mythbusters</channel>
+  <channel site="xumo.tv" site_id="150#99951244" lang="en" xmltv_id="NBCComedyVault.us@SD">NBC Comedy Vault</channel>
+  <channel site="i.mjh.nz" site_id="SamsungTVPlus/us#USBA300032J7" lang="en" xmltv_id="FoxSoul.us@SD">FOX SOUL</channel>
+  <channel site="plex.tv" site_id="5ef4e1b40d9ad000423c442a" lang="en" xmltv_id="RetroCrush.us@SD">RetroCrush</channel>
+  <channel site="tvpassport.com" site_id="pbs-kids-247/31867" lang="en" xmltv_id="PBSKids.us@SD">PBS KIDS</channel>
+  <channel site="pluto.tv" site_id="5ca6748a37b88b269472dad9" lang="en" xmltv_id="NickJrPlutoTV.us@US">Nick Jr. Pluto TV</channel>
+  <channel site="pluto.tv" site_id="5ca673e0d0bd6c2689c94ce3" lang="en" xmltv_id="NickelodeonPlutoTV.us@SD">Nickelodeon Pluto TV</channel>
+  <channel site="xumo.tv" site_id="0#99991638" lang="en" xmltv_id="DocumentaryPlus.us@US">Documentary+</channel>
+  <channel site="tvpassport.com" site_id="pbs-world/10214" lang="en" xmltv_id="WorldChannel.us@SD">World Channel</channel>
+  <channel site="plex.tv" site_id="5f74cf83ffbe690040689f50" lang="en" xmltv_id="HistoryHit.uk@SD">History Hit</channel>
+  <channel site="plex.tv" site_id="63506e7747b2355a27e76e7f" lang="en" xmltv_id="PBSNature.us@SD">PBS Nature</channel>
+  <channel site="i.mjh.nz" site_id="Roku/all#7e9fe2b4c7ba5869af6d60adbf4b7c86" lang="en" xmltv_id="ThisOldHouse.us@SD">This Old House</channel>
+  <channel site="pluto.tv" site_id="5fd7b8bf927e090007685853" lang="en" xmltv_id="Vevo80s.us@SD">Vevo '80s</channel>
+  <channel site="pluto.tv" site_id="5fd7bb1f86d94a000796e2c2" lang="en" xmltv_id="Vevo90s.us@SD">Vevo '90s</channel>
 </channels>
