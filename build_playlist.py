@@ -4,7 +4,7 @@ from pathlib import Path
 
 SOURCE = "https://iptv-org.github.io/iptv/languages/eng.m3u"
 OUTPUT = Path("English_TV_Essentials_US.m3u")
-EXPECTED_COUNT = 42
+EXPECTED_COUNT = 50
 
 GROUPS = {
     "01 Local Carolinas": [
@@ -21,24 +21,27 @@ GROUPS = {
     ],
     "04 Sports": [
         "NBCSportsNOW.us@SD", "FuboSportsNetwork.us@SD", "PGATour.us@SD",
-        "SportsGrid.us@SD", "Pac12Insider.us@SD", "PBRRidePass.us@SD"
+        "SportsGrid.us@SD", "Pac12Insider.us@SD", "PBRRidePass.us@SD",
+        "beINSPORTSXTRA.us@SD"
     ],
     "05 Movies": [
         "00sReplay.us@SD", "70sCinema.us@SD", "80sRewind.us@SD",
         "HallmarkMoviesMore.us@SD", "MovieSphere.us@US",
-        "PlutoTVActionMovies.us@CA"
+        "PlutoTVActionMovies.us@CA", "Charge.us@SD"
     ],
     "06 TV & Comedy": [
         "48Hours.us@US", "Baywatch.us@US", "Cheers.us@CA",
         "HappyDays.us@SD", "Matlock.us@SD", "Mythbusters.us@UK",
-        "NBCComedyVault.us@SD"
+        "NBCComedyVault.us@SD", "AFV.us@SD", "FoxSoul.us@SD",
+        "RetroCrush.us@SD"
     ],
     "07 Kids & Family": [
         "PBSKids.us@SD", "NickJrPlutoTV.us@US", "NickelodeonPlutoTV.us@SD",
         "LegoChannel.us@SD", "HappyKids.us@SD"
     ],
     "08 Docs & Learning": [
-        "DocumentaryPlus.us@US", "WorldChannel.us@SD"
+        "DocumentaryPlus.us@US", "WorldChannel.us@SD", "HistoryHit.uk@SD",
+        "PBSNature.us@SD", "ThisOldHouse.us@SD"
     ],
     "09 Music": [
         "Vevo80s.us@SD", "Vevo90s.us@SD"
@@ -53,7 +56,7 @@ OVERRIDES = {
     "AccuWeatherNOW.us@SD": "https://d1gldweznovt26.cloudfront.net/Accuweather.m3u8",
     "HallmarkMoviesMore.us@SD": "https://jmp2.uk/plu-628e685ba3811100070551a8.m3u8",
     "Baywatch.us@US": "https://aegis-cloudfront-1.tubi.video/9d1cd886-32b9-41ce-a7de-3babb46506aa/playlist.m3u8",
-    "Mythbusters.us@UK": "https://d1cgf0ptrv4t22.cloudfront.net/Mythbuilders_GB.m3u8",
+    "Mythbusters.us@UK": "https://d1cgf0ptrv4t22.cloudfront.net/Mythbusters_GB.m3u8",
     "Vevo80s.us@SD": "https://jmp2.uk/plu-5fd7b8bf927e090007685853.m3u8",
     "Vevo90s.us@SD": "https://jmp2.uk/plu-5fd7bb1f86d94a000796e2c2.m3u8",
 }
@@ -87,7 +90,7 @@ for i, line in enumerate(lines[:-1]):
 output = [
     "#EXTM3U",
     "# Jellyfin-certified HTTPS-only English IPTV playlist",
-    "# 42 retained channels; tested for Jellyfin/FFmpeg compatibility",
+    f"# {EXPECTED_COUNT} retained channels; tested for Jellyfin/FFmpeg compatibility",
 ]
 
 missing = []
