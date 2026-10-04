@@ -4,7 +4,7 @@ from pathlib import Path
 
 SOURCE = "https://iptv-org.github.io/iptv/languages/eng.m3u"
 OUTPUT = Path("English_TV_Essentials_US.m3u")
-EXPECTED_COUNT = 50
+EXPECTED_COUNT = 67
 
 GROUPS = {
     "01 Local Carolinas": [
@@ -22,29 +22,35 @@ GROUPS = {
     "04 Sports": [
         "NBCSportsNOW.us@SD", "FuboSportsNetwork.us@SD", "PGATour.us@SD",
         "SportsGrid.us@SD", "Pac12Insider.us@SD", "PBRRidePass.us@SD",
-        "beINSPORTSXTRA.us@SD"
+        "beINSPORTSXTRA.us@SD", "ACCDigitalNetwork.us@SD",
+        "NFLChannel.us@SD", "MLB.us@SD", "WorldPokerTour.us@US",
+        "MonsterJam.us@SD"
     ],
     "05 Movies": [
         "00sReplay.us@SD", "70sCinema.us@SD", "80sRewind.us@SD",
         "HallmarkMoviesMore.us@SD", "MovieSphere.us@US",
-        "PlutoTVActionMovies.us@CA", "Charge.us@SD"
+        "PlutoTVActionMovies.us@CA", "Charge.us@SD", "DUST.us@SD",
+        "PlutoTVSciFi.us@CA", "PlutoTVWesterns.us@US"
     ],
     "06 TV & Comedy": [
         "48Hours.us@US", "Baywatch.us@US", "Cheers.us@CA",
         "HappyDays.us@SD", "Matlock.us@SD", "Mythbusters.us@UK",
         "NBCComedyVault.us@SD", "AFV.us@SD", "FoxSoul.us@SD",
-        "RetroCrush.us@SD"
+        "RetroCrush.us@SD", "StarTrekTheNextGeneration.us@SD"
     ],
     "07 Kids & Family": [
         "PBSKids.us@SD", "NickJrPlutoTV.us@US", "NickelodeonPlutoTV.us@SD",
-        "LegoChannel.us@SD", "HappyKids.us@SD"
+        "LegoChannel.us@SD", "HappyKids.us@SD", "SuperSimpleSongs.us@SD",
+        "pocketwatch.us@SD"
     ],
     "08 Docs & Learning": [
         "DocumentaryPlus.us@US", "WorldChannel.us@SD", "HistoryHit.uk@SD",
-        "PBSNature.us@SD", "ThisOldHouse.us@SD"
+        "PBSNature.us@SD", "ThisOldHouse.us@SD", "BBCHomeGarden.us@SD",
+        "Localish.us@SD", "PBSTravel.us@SD", "AntiquesRoadTrip.us@SD"
     ],
     "09 Music": [
-        "Vevo80s.us@SD", "Vevo90s.us@SD"
+        "Vevo80s.us@SD", "Vevo90s.us@SD", "XITE90sThrowback.us@SD",
+        "TheCountryNetwork.us@SD"
     ],
 }
 
