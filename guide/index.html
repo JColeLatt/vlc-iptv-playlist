@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071018">
+  <meta name="description" content="Movie Vault live TV channel guide">
+  <title>Movie Vault Live TV</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#channels">Skip to channels</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Movie Vault Live TV home">
+      <span class="brand-mark" aria-hidden="true">MV</span>
+      <span><strong>Movie Vault</strong><small>Live TV Guide</small></span>
+    </a>
+    <div class="status"><span class="live-dot"></span><span>Live guide</span><time id="clock"></time></div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="guide-title">
+      <div>
+        <p class="eyebrow">Your channels. One simple guide.</p>
+        <h1 id="guide-title">What’s on now</h1>
+        <p id="guide-summary">Loading the Movie Vault lineup…</p>
+      </div>
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <span class="sr-only">Search channels and programs</span>
+        <input id="search" type="search" placeholder="Search channels or shows" autocomplete="off">
+      </label>
+    </section>
+
+    <nav id="categories" class="categories" aria-label="Channel categories"></nav>
+
+    <section class="guide-heading">
+      <div><p class="eyebrow" id="section-kicker">All channels</p><h2 id="section-title">Live lineup</h2></div>
+      <p id="result-count" aria-live="polite"></p>
+    </section>
+
+    <section id="channels" class="channel-grid" aria-label="Channels" aria-busy="true"></section>
+    <div id="empty-state" class="empty-state" hidden>
+      <h2>No matching channels</h2><p>Try another category or search.</p>
+    </div>
+  </main>
+
+  <template id="channel-template">
+    <article class="channel-card">
+      <div class="card-topline"><span class="channel-number"></span><span class="channel-category"></span></div>
+      <div class="channel-identity">
+        <div class="logo-frame"><img class="channel-logo" alt="" loading="lazy"><span class="logo-fallback">MV</span></div>
+        <div><h3 class="channel-name"></h3><p class="channel-id"></p></div>
+      </div>
+      <div class="program-block">
+        <p class="program-label">Now playing</p>
+        <h4 class="now-title"></h4>
+        <p class="now-time"></p>
+        <div class="progress-track" aria-hidden="true"><span></span></div>
+      </div>
+      <div class="next-block"><span>Next</span><strong class="next-title"></strong><time class="next-time"></time></div>
+      <div class="card-actions">
+        <button class="favorite-button" type="button" aria-label="Add to favorites" aria-pressed="false">☆ <span>Favorite</span></button>
+        <a class="watch-button" href="#">Watch <span aria-hidden="true">▶</span></a>
+      </div>
+    </article>
+  </template>
+
+  <footer><p>Movie Vault · Authorized channel lineup</p><p id="data-status"></p></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

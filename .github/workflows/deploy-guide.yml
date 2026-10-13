@@ -1,0 +1,51 @@
+name: Deploy Movie Vault guide
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "guide/**"
+      - "scripts/build_guide.py"
+      - "epg/**"
+      - "English_TV_Essentials_US.m3u"
+      - ".github/workflows/deploy-guide.yml"
+  schedule:
+    - cron: "25 9,21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: movie-vault-guide
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}guide/
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh authorized XMLTV data
+        run: ./epg/refresh_epg.sh
+      - name: Build guide data from published playlist
+        run: >-
+          python3 scripts/build_guide.py
+          --playlist https://raw.githubusercontent.com/JColeLatt/vlc-iptv-playlist/main/English_TV_Essentials_US.m3u
+          --epg epg/guide.xml
+          --output guide/data/channels.json
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site
+          cp -R guide _site/guide
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
