@@ -30,8 +30,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}guide/
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Refresh authorized XMLTV data
-        run: ./epg/refresh_epg.sh
+        run: |
+          git clone --depth 1 --branch master https://github.com/iptv-org/epg.git "$RUNNER_TEMP/iptv-org-epg"
+          npm --prefix "$RUNNER_TEMP/iptv-org-epg" ci
+          npm --prefix "$RUNNER_TEMP/iptv-org-epg" run grab -- \
+            --channels="$GITHUB_WORKSPACE/epg/epg.channels.xml" \
+            --output="$GITHUB_WORKSPACE/epg/guide.xml" \
+            --days=3 \
+            --maxConnections=4
+          python3 epg/validate_guide.py epg/guide.xml --minimum-channels=35
       - name: Build guide data from published playlist
         run: >-
           python3 scripts/build_guide.py
