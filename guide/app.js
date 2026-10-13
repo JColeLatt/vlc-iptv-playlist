@@ -9,6 +9,7 @@ const categoryOrder = ["All", "Local", "News", "Sports", "Kids", "Movies", "Ente
 const grid = document.querySelector("#channels");
 const template = document.querySelector("#channel-template");
 const search = document.querySelector("#search");
+const scheduleDialog = document.querySelector("#schedule-dialog");
 
 function currentPrograms(channel, now = new Date()) {
   const nowMs = now.getTime();
@@ -21,6 +22,17 @@ function currentPrograms(channel, now = new Date()) {
 function timeLabel(value) {
   if (!value) return "";
   return new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" }).format(new Date(value));
+}
+
+function dateTimeLabel(value) {
+  if (!value) return "Not listed";
+  return new Intl.DateTimeFormat(undefined, {
+    weekday: "short", hour: "numeric", minute: "2-digit"
+  }).format(new Date(value));
+}
+
+function programTime(program) {
+  return program ? `${dateTimeLabel(program.start)} – ${timeLabel(program.stop)}` : "Not listed";
 }
 
 function progress(current) {
@@ -96,11 +108,70 @@ function channelCard(channel) {
     render();
   });
 
+  const schedule = fragment.querySelector(".schedule-button");
+  schedule.setAttribute("aria-label", `View ${channel.name} schedule`);
+  schedule.addEventListener("click", () => openSchedule(channel));
+
   const watch = fragment.querySelector(".watch-button");
   watch.href = channel.stream;
   watch.setAttribute("aria-label", `Watch ${channel.name}`);
   card.dataset.channelId = channel.id;
   return fragment;
+}
+
+function openSchedule(channel) {
+  const now = new Date();
+  const end = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+  const { current, next } = currentPrograms(channel, now);
+  const upcoming = channel.programs.filter(program =>
+    new Date(program.stop) > now && new Date(program.start) < end
+  );
+
+  document.querySelector("#schedule-number").textContent = `CH ${String(channel.number).padStart(3, "0")} · ${channel.category}`;
+  document.querySelector("#schedule-title").textContent = channel.name;
+  document.querySelector("#detail-now-title").textContent = current?.title || "Program data unavailable";
+  document.querySelector("#detail-now-time").textContent = programTime(current);
+  document.querySelector("#detail-next-title").textContent = next?.title || "Not listed";
+  document.querySelector("#detail-next-time").textContent = programTime(next);
+  document.querySelector("#schedule-count").textContent = `${upcoming.length} listing${upcoming.length === 1 ? "" : "s"}`;
+
+  const logo = document.querySelector("#schedule-logo");
+  const logoFrame = logo.closest(".logo-frame");
+  logoFrame.classList.remove("missing");
+  logo.src = channel.logo;
+  logo.alt = `${channel.name} logo`;
+  logo.onerror = () => logoFrame.classList.add("missing");
+  if (!channel.logo) logoFrame.classList.add("missing");
+
+  const list = document.querySelector("#schedule-list");
+  list.replaceChildren(...upcoming.map(program => {
+    const item = document.createElement("li");
+    if (program === current) item.classList.add("is-now");
+    const time = document.createElement("time");
+    time.dateTime = program.start;
+    time.textContent = dateTimeLabel(program.start);
+    const content = document.createElement("div");
+    const title = document.createElement("strong");
+    title.textContent = program.title;
+    const description = document.createElement("p");
+    description.textContent = program.subtitle || program.description || "";
+    content.append(title, description);
+    item.append(time, content);
+    return item;
+  }));
+  document.querySelector("#schedule-empty").hidden = upcoming.length !== 0;
+  const watch = document.querySelector("#schedule-watch");
+  watch.href = channel.stream;
+  watch.setAttribute("aria-label", `Watch ${channel.name}`);
+  scheduleDialog.showModal();
+}
+
+function updateHealth(data) {
+  const refreshed = new Date(data.generatedAt);
+  const ageHours = (Date.now() - refreshed.getTime()) / 3_600_000;
+  document.querySelector("#health-refresh").textContent = refreshed.toLocaleString();
+  document.querySelector("#health-coverage").textContent = `${data.epgChannelCount} of ${data.channelCount} channels`;
+  document.querySelector("#stale-warning").hidden = ageHours <= 18;
 }
 
 function render() {
@@ -125,6 +196,7 @@ fetch("data/channels.json")
     state.channels = data.channels;
     document.querySelector("#guide-summary").textContent = `${data.channelCount} channels · ${data.epgChannelCount} with program listings`;
     document.querySelector("#data-status").textContent = `Guide updated ${new Date(data.generatedAt).toLocaleString()}`;
+    updateHealth(data);
     buildCategories();
     render();
   })
@@ -133,6 +205,11 @@ fetch("data/channels.json")
     document.querySelector("#guide-summary").textContent = "The guide data could not be loaded.";
     document.querySelector("#data-status").textContent = error.message;
   });
+
+document.querySelector("#schedule-close").addEventListener("click", () => scheduleDialog.close());
+scheduleDialog.addEventListener("click", event => {
+  if (event.target === scheduleDialog) scheduleDialog.close();
+});
 
 updateClock();
 setInterval(updateClock, 30_000);

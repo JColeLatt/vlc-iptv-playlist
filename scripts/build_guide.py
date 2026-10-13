@@ -101,6 +101,7 @@ def main() -> None:
         "epgDate": epg_date,
         "channelCount": len(channels),
         "epgChannelCount": sum(bool(channel["programs"]) for channel in channels),
+        "epgMissingCount": sum(not channel["programs"] for channel in channels),
         "channels": channels,
     }
     output = Path(args.output)
