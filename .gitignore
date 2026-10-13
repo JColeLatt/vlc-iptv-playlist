@@ -1,4 +1,5 @@
 __pycache__/
 *.py[cod]
 epg/guide.xml.new
+guide/data/channels.json
 epg/guide.xml
