@@ -34,6 +34,15 @@
 
     <nav id="categories" class="categories" aria-label="Channel categories"></nav>
 
+    <section class="guide-health" aria-labelledby="health-title">
+      <div><p class="eyebrow">Guide health</p><h2 id="health-title">Schedule status</h2></div>
+      <dl>
+        <div><dt>Last refresh</dt><dd id="health-refresh">Checking…</dd></div>
+        <div><dt>EPG coverage</dt><dd id="health-coverage">Checking…</dd></div>
+      </dl>
+      <p id="stale-warning" class="stale-warning" role="status" hidden>Schedule data is stale. Some listings may have changed.</p>
+    </section>
+
     <section class="guide-heading">
       <div><p class="eyebrow" id="section-kicker">All channels</p><h2 id="section-title">Live lineup</h2></div>
       <p id="result-count" aria-live="polite"></p>
@@ -61,10 +70,29 @@
       <div class="next-block"><span>Next</span><strong class="next-title"></strong><time class="next-time"></time></div>
       <div class="card-actions">
         <button class="favorite-button" type="button" aria-label="Add to favorites" aria-pressed="false">☆ <span>Favorite</span></button>
+        <button class="schedule-button" type="button">Schedule</button>
         <a class="watch-button" href="#">Watch <span aria-hidden="true">▶</span></a>
       </div>
     </article>
   </template>
+
+  <dialog id="schedule-dialog" class="schedule-dialog" aria-labelledby="schedule-title">
+    <div class="schedule-header">
+      <div class="schedule-identity">
+        <div class="logo-frame"><img id="schedule-logo" class="channel-logo" alt=""><span class="logo-fallback">MV</span></div>
+        <div><p class="eyebrow" id="schedule-number"></p><h2 id="schedule-title"></h2></div>
+      </div>
+      <button id="schedule-close" class="close-button" type="button" aria-label="Close schedule">×</button>
+    </div>
+    <div class="schedule-now-next">
+      <section><p class="program-label">Now</p><h3 id="detail-now-title"></h3><p id="detail-now-time"></p></section>
+      <section><p class="program-label">Next</p><h3 id="detail-next-title"></h3><p id="detail-next-time"></p></section>
+    </div>
+    <div class="schedule-heading"><h3>Next 24 hours</h3><span id="schedule-count"></span></div>
+    <ol id="schedule-list" class="schedule-list"></ol>
+    <p id="schedule-empty" class="empty-schedule" hidden>No program listings are available for this channel.</p>
+    <a id="schedule-watch" class="watch-button schedule-watch" href="#">Watch channel <span aria-hidden="true">▶</span></a>
+  </dialog>
 
   <footer><p>Movie Vault · Authorized channel lineup</p><p id="data-status"></p></footer>
   <script src="app.js" defer></script>

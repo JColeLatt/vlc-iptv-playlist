@@ -46,6 +46,14 @@ h1 { margin: 0; font-size: clamp(2.4rem,7vw,5.4rem); line-height: .95; letter-sp
 .category-button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #211405; }
 .category-button:hover { border-color: var(--accent); }
 
+.guide-health { display: grid; grid-template-columns: minmax(180px,.7fr) minmax(320px,1.3fr); align-items: center; gap: 1.2rem 2rem; margin: .5rem 0 2rem; padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(16,27,37,.72); }
+.guide-health h2 { margin: 0; font-size: 1.15rem; }
+.guide-health dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin: 0; }
+.guide-health dl div { padding-left: 1rem; border-left: 2px solid var(--line); }
+.guide-health dt { color: var(--muted); font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.guide-health dd { margin: .3rem 0 0; font-weight: 750; }
+.stale-warning { grid-column: 1/-1; margin: 0; padding: .75rem 1rem; border-radius: 10px; background: #402a10; color: #ffd992; }
+
 .guide-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin: 1.5rem 0 1rem; }
 .guide-heading h2 { margin: 0; font-size: clamp(1.7rem,3vw,2.5rem); }
 .guide-heading > p { color: var(--muted); }
@@ -71,20 +79,47 @@ h1 { margin: 0; font-size: clamp(2.4rem,7vw,5.4rem); line-height: .95; letter-sp
 .next-block { display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: .6rem; align-items: baseline; min-height: 50px; padding: .9rem .2rem; color: var(--muted); font-size: .8rem; }
 .next-block strong { overflow: hidden; color: var(--text); font-size: .86rem; text-overflow: ellipsis; white-space: nowrap; }
 .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: auto; }
-.favorite-button, .watch-button { min-height: 52px; display: flex; align-items: center; justify-content: center; gap: .45rem; border-radius: 13px; font-weight: 850; cursor: pointer; text-decoration: none; }
+.favorite-button, .schedule-button, .watch-button { min-height: 52px; display: flex; align-items: center; justify-content: center; gap: .45rem; border-radius: 13px; font-weight: 850; cursor: pointer; text-decoration: none; }
 .favorite-button { border: 1px solid var(--line); background: transparent; color: var(--text); }
+.schedule-button { border: 1px solid var(--line); background: var(--surface-2); color: var(--text); }
 .favorite-button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent-2); }
-.watch-button { border: 1px solid var(--accent); background: var(--accent); color: #201205; }
-.favorite-button:hover, .watch-button:hover { filter: brightness(1.1); }
+.watch-button { grid-column: 1/-1; border: 1px solid var(--accent); background: var(--accent); color: #201205; }
+.favorite-button:hover, .schedule-button:hover, .watch-button:hover { filter: brightness(1.1); }
 button:focus-visible, a:focus-visible, input:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
 .empty-state { padding: 5rem 1rem; text-align: center; color: var(--muted); }
 footer { display: flex; justify-content: space-between; gap: 1rem; padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+
+.schedule-dialog { width: min(760px,calc(100% - 2rem)); max-height: min(88vh,900px); padding: 0; overflow: auto; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); color: var(--text); box-shadow: 0 28px 90px rgba(0,0,0,.6); }
+.schedule-dialog::backdrop { background: rgba(0,7,12,.8); backdrop-filter: blur(5px); }
+.schedule-header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem; border-bottom: 1px solid var(--line); background: rgba(16,27,37,.96); }
+.schedule-identity { display: flex; align-items: center; gap: 1rem; min-width: 0; }
+.schedule-identity h2 { margin: 0; font-size: clamp(1.3rem,4vw,2rem); }
+.close-button { width: 52px; height: 52px; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-2); color: var(--text); font-size: 2rem; cursor: pointer; }
+.schedule-now-next { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; padding: 1.2rem; }
+.schedule-now-next section { padding: 1rem; border-radius: 14px; background: var(--bg); }
+.schedule-now-next h3 { margin: .35rem 0; font-size: 1rem; }
+.schedule-now-next section > p:last-child { margin: 0; color: var(--muted); font-size: .82rem; }
+.schedule-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: .3rem 1.2rem; }
+.schedule-heading h3 { margin: 0; }
+.schedule-heading span { color: var(--muted); font-size: .82rem; }
+.schedule-list { margin: .7rem 1.2rem 1.2rem; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.schedule-list li { display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 1rem; padding: 1rem .3rem; border-bottom: 1px solid var(--line); }
+.schedule-list li.is-now { border-left: 4px solid var(--accent); padding-left: .8rem; background: rgba(239,177,61,.07); }
+.schedule-list time { color: var(--accent-2); font-size: .82rem; font-weight: 750; }
+.schedule-list strong { display: block; }
+.schedule-list p { display: -webkit-box; margin: .3rem 0 0; overflow: hidden; color: var(--muted); font-size: .82rem; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.empty-schedule { margin: 1rem 1.2rem; color: var(--muted); }
+.schedule-watch { margin: 0 1.2rem 1.2rem; }
 
 @media (max-width: 720px) {
   .site-header { min-height: 70px; }
   .status > span:not(.live-dot) { display: none; }
   .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 3.5rem; }
   .channel-grid { grid-template-columns: 1fr; }
+  .guide-health { grid-template-columns: 1fr; }
+  .guide-health dl { grid-template-columns: 1fr; }
+  .schedule-now-next { grid-template-columns: 1fr; }
+  .schedule-list li { grid-template-columns: 95px minmax(0,1fr); }
   footer { display: block; }
 }
 
@@ -93,7 +128,7 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 2rem
   .category-button { min-height: 64px; padding-inline: 1.7rem; }
   .channel-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
   .channel-card { min-height: 430px; padding: 1.4rem; }
-  .favorite-button, .watch-button { min-height: 62px; }
+  .favorite-button, .schedule-button, .watch-button { min-height: 62px; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Exact iptv-org channel/feed IDs for the published playlist. Unlisted channels have no verified source. -->
 <channels>
+  <!-- Playlist ID differs from iptv-org's canonical WSOCTV91 ID; the site feed is the same Charlotte ABC station. -->
+  <channel site="tvpassport.com" site_id="abc-wsoc-charlotte-nc-hd/4708" lang="en" xmltv_id="ABC.us@WSOCTV">ABC WSOC-TV</channel>
   <channel site="tvpassport.com" site_id="cbs-wbtv-charlotte-nc-hd/3649" lang="en" xmltv_id="WBTV641.us@HD">WBTV 64.1</channel>
   <channel site="pluto.tv" site_id="6508be683a0d700008c534e4" lang="en" xmltv_id="ABCNewsLive.us@SD">ABC News Live</channel>
   <channel site="xumo.tv" site_id="0#99991158" lang="en" xmltv_id="CBSNews247.us@SD">CBS News 24/7</channel>
@@ -20,20 +22,28 @@
   <channel site="plex.tv" site_id="646c0dfbfb58444e4e1e262d" lang="en" xmltv_id="Pac12Insider.us@SD">Pac-12 Insider</channel>
   <channel site="pluto.tv" site_id="60d39387706fe50007fda8e8" lang="en" xmltv_id="PBRRidePass.us@SD">PBR RidePass</channel>
   <channel site="beinsports.com" site_id="1ACADCF1-DFAC-480B-872C-53D51FE1B45D" lang="en" xmltv_id="beINSPORTSXTRA.us@SD">beIN SPORTS XTRA</channel>
+  <channel site="pluto.tv" site_id="5ced7d5df64be98e07ed47b6" lang="en" xmltv_id="NFLChannel.us@SD">NFL Channel</channel>
+  <channel site="pluto.tv" site_id="5e66968a70f34c0007d050be" lang="en" xmltv_id="MLB.us@SD">MLB</channel>
+  <channel site="pluto.tv" site_id="65bcc9c8d77d450008b34c6b" lang="en" xmltv_id="MonsterJam.us@SD">Monster Jam</channel>
+  <channel site="pluto.tv" site_id="62ba60f059624e000781c436" lang="en" xmltv_id="00sReplay.us@SD">00s Replay</channel>
   <channel site="pluto.tv" site_id="5f4d878d3d19b30007d2e782" lang="en" xmltv_id="70sCinema.us@SD">70s Cinema</channel>
   <channel site="pluto.tv" site_id="5ca525b650be2571e3943c63" lang="en" xmltv_id="80sRewind.us@SD">80s Rewind</channel>
   <channel site="pluto.tv" site_id="628e685ba3811100070551a8" lang="en" xmltv_id="HallmarkMoviesMore.us@SD">Hallmark Movies &amp; More</channel>
   <channel site="xumo.tv" site_id="0#99951251" lang="en" xmltv_id="MovieSphere.us@US">MovieSphere</channel>
   <channel site="pluto.tv" site_id="62ea3c2e4823db00072788ed" lang="en" xmltv_id="PlutoTVActionMovies.us@CA">Pluto TV Action Movies</channel>
+  <channel site="pluto.tv" site_id="66166cb1307fa30008f275e7" lang="en" xmltv_id="PlutoTVSciFi.us@CA">Pluto TV Sci-Fi</channel>
+  <channel site="pluto.tv" site_id="5b4e94282d4ec87bdcbb87cd" lang="en" xmltv_id="PlutoTVWesterns.us@US">Pluto TV Westerns</channel>
   <channel site="tvpassport.com" site_id="charge/15228" lang="en" xmltv_id="Charge.us@SD">Charge!</channel>
   <channel site="i.mjh.nz" site_id="Roku/all#e1df79771ae4850c0e48ecc6284065d0" lang="en" xmltv_id="48Hours.us@US">48 Hours</channel>
   <channel site="plex.tv" site_id="63e63f20abacad42ed3d1acf" lang="en" xmltv_id="Baywatch.us@US">Baywatch</channel>
+  <channel site="pluto.tv" site_id="62bdb7f0db2eb30007376d4d" lang="en" xmltv_id="Cheers.us@CA">Cheers</channel>
   <channel site="pluto.tv" site_id="5f7794162a4559000781fc12" lang="en" xmltv_id="HappyDays.us@SD">Happy Days</channel>
   <channel site="pluto.tv" site_id="60f754f98185580007eb0754" lang="en" xmltv_id="Matlock.us@SD">Matlock</channel>
   <channel site="plex.tv" site_id="65cd278697fb4731f54ecae5" lang="en" xmltv_id="Mythbusters.us@UK">Mythbusters</channel>
   <channel site="xumo.tv" site_id="150#99951244" lang="en" xmltv_id="NBCComedyVault.us@SD">NBC Comedy Vault</channel>
   <channel site="i.mjh.nz" site_id="SamsungTVPlus/us#USBA300032J7" lang="en" xmltv_id="FoxSoul.us@SD">FOX SOUL</channel>
   <channel site="plex.tv" site_id="5ef4e1b40d9ad000423c442a" lang="en" xmltv_id="RetroCrush.us@SD">RetroCrush</channel>
+  <channel site="pluto.tv" site_id="695c32e61ca20bb8ca802eb9" lang="en" xmltv_id="StarTrekTheNextGeneration.us@SD">Star Trek: The Next Generation</channel>
   <channel site="tvpassport.com" site_id="pbs-kids-247/31867" lang="en" xmltv_id="PBSKids.us@SD">PBS KIDS</channel>
   <channel site="pluto.tv" site_id="5ca6748a37b88b269472dad9" lang="en" xmltv_id="NickJrPlutoTV.us@US">Nick Jr. Pluto TV</channel>
   <channel site="pluto.tv" site_id="5ca673e0d0bd6c2689c94ce3" lang="en" xmltv_id="NickelodeonPlutoTV.us@SD">Nickelodeon Pluto TV</channel>
